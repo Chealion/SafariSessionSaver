@@ -28,6 +28,7 @@ on restore_safari_session(urlList)
 		tell application "Safari"
 			repeat with urlIt in paragraphs of urlList
 				make new document at end of documents with properties {URL:urlIt}
+				delay 1
 			end repeat
 		end tell
 	end ignoring
