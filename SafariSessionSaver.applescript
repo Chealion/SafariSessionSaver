@@ -1,7 +1,7 @@
 current_safari_session()
 
 on current_safari_session()
-	tell application "Safari"
+	tell application "WebKit"
 		set urlList to {}
 		set windowList to every window
 		repeat with windowIt in windowList
@@ -25,7 +25,7 @@ end current_safari_session
 
 on restore_safari_session(urlList)
 	ignoring application responses
-		tell application "Safari"
+		tell application "WebKit"
 			repeat with urlIt in paragraphs of urlList
 				make new document at end of documents with properties {URL:urlIt}
 				delay 1
